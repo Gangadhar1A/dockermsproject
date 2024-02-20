@@ -1,27 +1,30 @@
----
-version: "3.8"
+version: '3.8'
 services:
   movies:
-    image: srinadhgoud/paytmmovies:latest
+    image: gangadhar1/movies:latest
     ports:
-      - 91:80
+      - "91:80"
     deploy:
       replicas: 3
+
   train:
-    image: srinadhgoud/paytmtrain:latest
+    image: gangadhar1/train:latest
     ports:
-      - 92:80
+      - "92:80"
     deploy:
       replicas: 3
-  recharge:
-    image: srinadhgoud/paytmrecharge:latest
-    ports:
-      - 93:80
-    deploy:
-      replicas: 3
+
   dth:
-    image: srinadhgoud/paytmdth:latest
+    image: gangadhar1/dth:latest
     ports:
-      - 94:80
+      - "93:80"
     deploy:
       replicas: 3
+
+  recharge:
+    image: gangadhar1/recharge:latest
+    ports:
+      - "94:80"
+    deploy:
+      replicas: 3
+
